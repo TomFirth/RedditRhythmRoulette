@@ -10,7 +10,6 @@
   },
   "license": "ISC",
   "dependencies": {
-    "dotenv": "5.0.0",
     "fetch-subreddit": "3.0.0"
   },
   "devDependencies": {

@@ -1,7 +1,6 @@
 const http = require('http')
 const port = 3000
 const { fetchSubreddit } = require('fetch-subreddit')
-require('dotenv').config()
 let randomTracks = []
 
 function randomify(max) {
