@@ -1,0 +1,20 @@
+{
+  "name": "rrr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "standard"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "5.0.0",
+    "fetch-subreddit": "3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.14.12",
+    "standard": "10.0.3"
+  }
+}
