@@ -1,7 +1,7 @@
 {
   "name": "rrr",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scrape Reddit (subreddit: vintageobscura) for three random tracks",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -10,11 +10,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "body-parser": "1.18.2",
     "express": "4.16.2",
-    "fetch-subreddit": "3.0.0",
-    "moment": "2.20.1",
-    "pug": "2.0.0-rc.4"
+    "fetch-subreddit": "3.0.0"
   },
   "devDependencies": {
     "nodemon": "1.14.12",

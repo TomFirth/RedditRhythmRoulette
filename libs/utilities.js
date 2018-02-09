@@ -16,10 +16,7 @@ utilities.fetchReddit = () => {
         randomTracks.push(urls[0].urls[rand])
       }
     }
-    const tracks = randomTracks.slice(0, 3)
-    return JSON.stringify({
-      tracks
-    })
+    return randomTracks.slice(0, 3)
   })
   .catch(err => console.error(err))
 }
