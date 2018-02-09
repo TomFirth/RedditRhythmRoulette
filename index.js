@@ -1,30 +1,27 @@
-const http = require('http')
+const express = require('express')
+const app = express()
 const port = process.env.PORT || 3000
-const { fetchSubreddit } = require('fetch-subreddit')
-let randomTracks = []
+const utilities = require('./libs/utilities')
+const path = require('path')
+const bodyParser = require('body-parser')
 
-function randomify(max) {
-  return Math.floor(Math.random() * (max - 0 + 1)) + 0;
-}
+app.set('views', path.join(__dirname, 'public/views'))
+app.set('view engine', 'pug')
+app.locals.basedir = path.join(__dirname, '/')
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+app.use(bodyParser.json({
+  extended: true
+}))
 
-const requestHandler = (req, res) => {
-  fetchSubreddit('vintageobscura')
-  .then((urls) => {
-    for (let i = 0; i < 3; i++) {
-      const rand = randomify(urls[0].urls.length)
-      randomTracks.push({
-        track: urls[0].urls[rand]
-      })
-    }
-    const tracks = randomTracks.slice(0, 3)
-    res.end(JSON.stringify(tracks))
+app.get('/', async (req, res) => {
+  const getData = await utilities.fetchReddit()
+  res.render('index', {
+    tracks: JSON.parse(getData).tracks
   })
-  .catch((err) => console.error(err))
-}
+})
 
-const server = http.createServer(requestHandler)
-
-server.listen(port, (err) => {
-  if (err) console.error(err)
-  console.log(`server is listening on ${port}`)
+app.listen(port, () => {
+  console.log(`Reddit Rhythm Roulette on port ${port}!`)
 })
