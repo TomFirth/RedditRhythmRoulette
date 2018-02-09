@@ -6,6 +6,8 @@ const utilities = require('./libs/utilities')
 app.get('/', async (req, res) => {
   const fetchReddit = await utilities.fetchReddit()
   res.end(JSON.stringify({
+    name: 'Reddit Rhythm Roulette',
+    description: 'Scrape Reddit (subreddit: vintageobscura) for three random tracks.',
     tracks: fetchReddit
   }))
 })
