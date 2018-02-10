@@ -7,13 +7,25 @@ utilities.randomify = (max) => {
 }
 
 utilities.fetchReddit = () => {
+  const subReddits = [
+    'vintageobscura',
+    'SoulMusic',
+    'JazzMusic',
+    'Jazz'
+  ]
   let randomTracks = []
-  return fetchSubreddit('vintageobscura')
+  let everything = []
+  let array = []
+  return fetchSubreddit(subReddits)
   .then((urls) => {
+    urls.forEach(tracks => {
+      everything.push(tracks.urls)
+    })
+    const completeList = array.concat(everything[0], everything[1], everything[2], everything[3])
     while (randomTracks.length < 3) {
-      const rand = utilities.randomify(urls[0].urls.length)
-      if (urls[0].urls[rand] && (randomTracks.indexOf(urls[0].urls[rand]) > -1 || !urls[0].urls[rand].includes('reddit'))) {
-        randomTracks.push(urls[0].urls[rand])
+      const rand = utilities.randomify(completeList.length)
+      if (completeList[rand] && (randomTracks.indexOf(completeList[rand]) > -1 || completeList[rand].includes('youtu'))) {
+        randomTracks.push(completeList[rand])
       }
     }
     return randomTracks.slice(0, 3)
