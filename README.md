@@ -1,10 +1,11 @@
 # Reddit Rhythm Roulette
 
 Scrape subreddits for three random tracks.
-- [vintageobscura](https://www.reddit.com/r/vintageobscura/)]
-- [SoulMusic](https://www.reddit.com/r/SoulMusic/)]
-- [JazzMusic](https://www.reddit.com/r/JazzMusic/)]
-- [Jazz](https://www.reddit.com/r/Jazz/)]
+- [vintageobscura](https://www.reddit.com/r/vintageobscura/)
+- [SoulMusic](https://www.reddit.com/r/SoulMusic/)
+- [JazzMusic](https://www.reddit.com/r/JazzMusic/)
+- [Jazz](https://www.reddit.com/r/Jazz/)
+- [Disco](https://www.reddit.com/r/Disco)
 
 # Nice to Haves:
 

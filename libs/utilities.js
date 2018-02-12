@@ -11,7 +11,8 @@ utilities.fetchReddit = () => {
     'vintageobscura',
     'SoulMusic',
     'JazzMusic',
-    'Jazz'
+    'Jazz',
+    'Disco'
   ]
   let randomTracks = []
   let everything = []
