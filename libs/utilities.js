@@ -25,11 +25,15 @@ utilities.fetchReddit = () => {
     const completeList = array.concat(everything[0], everything[1], everything[2], everything[3])
     while (randomTracks.length < 3) {
       const rand = utilities.randomify(completeList.length)
-      if (completeList[rand] && (randomTracks.indexOf(completeList[rand]) > -1 || completeList[rand].includes('youtu'))) {
+      if (completeList[rand] && (randomTracks.indexOf(completeList[rand]) > -1 ||
+        completeList[rand].includes('youtu'))) {
         randomTracks.push(completeList[rand])
       }
     }
-    return randomTracks.slice(0, 3)
+    return {
+      subreddits: subReddits,
+      tracks: randomTracks.slice(0, 3)
+    }
   })
   .catch(err => console.error(err))
 }

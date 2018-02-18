@@ -7,8 +7,9 @@ app.get('/', async (req, res) => {
   const fetchReddit = await utilities.fetchReddit()
   res.end(JSON.stringify({
     name: 'Reddit Rhythm Roulette',
-    description: 'Scrape Reddit (subreddit: vintageobscura, SoulMusic, JazzMusic, Jazz) for three random tracks.',
-    tracks: fetchReddit
+    description: 'Scrape Reddits for three random tracks.',
+    subreddits: fetchReddit.subreddits,
+    tracks: fetchReddit.tracks
   }))
 })
 
